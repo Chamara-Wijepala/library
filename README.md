@@ -1,0 +1,2 @@
+This is the javascript library project from [The Odin Project.](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library)
+I've just learned a bit more about objects and prototypes, I hope to put those concepts into practice and get a clear understanding by the end.
