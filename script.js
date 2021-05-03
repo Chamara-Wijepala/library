@@ -13,7 +13,6 @@ function addBookToLibrary(object) {
 };
 
 function displayLibrary() {
-    //for(element in myLibrary) {
     for (i = 0; i < myLibrary.length; i++) {
         let book = document.createElement('div');
         book.className = 'bookCard';
@@ -22,16 +21,21 @@ function displayLibrary() {
     };
 };
 
-function addBookProperties(book) {// try to simplify this using object destructuring
-    let title = book.appendChild(document.createElement('h3'));
-    title.className = 'title';
-    title.innerText = myLibrary[i.title]; //access object's title property
-    let author = book.appendChild(document.createElement('h3'));
-    author.className = 'author';    
-    let pages = book.appendChild(document.createElement('h3'));
-    pages.className = 'pages';
-    let read = book.appendChild(document.createElement('button'));
-    read.className = 'read';
+function addBookProperties(book) {
+    let {title, author, pages, read} = myLibrary[i];
+
+    let titleElement = book.appendChild(document.createElement('h3'));
+    titleElement.className = 'title';
+    titleElement.innerText = title;
+    let authorElement = book.appendChild(document.createElement('h3'));
+    authorElement.className = 'author';
+    authorElement.innerText = author;    
+    let pagesElement = book.appendChild(document.createElement('h3'));
+    pagesElement.className = 'pages';
+    pagesElement.innerText = pages;
+    let readElement = book.appendChild(document.createElement('button'));
+    readElement.className = 'read';
+    readElement.innerText = read;
 };
 
 
