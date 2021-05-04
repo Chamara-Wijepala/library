@@ -13,6 +13,28 @@
         <main>
             <div id="library"></div>
         </main>
+        <form action="script.js" method="GET">
+            <div>
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" required>
+            </div>
+            <div>
+                <label for="author">Author</label>
+                <input type="text" name="author" id="author" required>
+            </div>
+            <div>
+                <label for="pages">Pages</label>
+                <input type="number" name="pages" id="pages" required min="1">
+            </div>
+            <div>
+                <label>
+                    Read
+                    <input type="checkbox" name="read">
+                </label>
+            </div>
+            <button type="reset">Clear</button>
+            <button type="submit">Submit</button>
+        </form>
     </body>
     <script src="script.js"></script>
 </html>
