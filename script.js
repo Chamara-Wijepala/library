@@ -38,6 +38,23 @@ function addBookProperties(book) {
     readElement.innerText = read;
 };
 
+function processForm() {
+    const formData = document.getElementById('form');
+    let title = formData[0].value;
+    let author = formData[1].value;
+    let pages = formData[2].value;
+    let read;
+
+    if (document.getElementById('yes').checked) {
+        read = 'Read'
+    }
+    else if (document.getElementById('no').checked) {
+        read = 'Not read'
+    };
+
+    myLibrary.push({title, author, pages, read});
+};
+
 
 
 //temporary objects
