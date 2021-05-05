@@ -21,6 +21,12 @@ function displayLibrary() {
     };
 };
 
+function clearLibrary() {
+    library.textContent = '';
+
+    displayLibrary();
+};
+
 function addBookProperties(book) {
     let {title, author, pages, read} = myLibrary[i];
 
@@ -53,6 +59,7 @@ function processForm() {
     };
 
     myLibrary.push({title, author, pages, read});
+    clearLibrary();
 };
 
 
