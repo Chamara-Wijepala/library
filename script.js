@@ -19,9 +19,11 @@ function displayLibrary() {
         library.appendChild(book);
         addBookProperties(book);
     };
+
+    addListeners();
 };
 
-function clearLibrary() {
+function updateLibrary() {
     library.textContent = '';
 
     displayLibrary();
@@ -63,10 +65,22 @@ function processForm() {
     };
 
     myLibrary.push({title, author, pages, read});
-    clearLibrary();
+    updateLibrary();
 };
 
+function removeBook() {
+    let bookToRemove = this.dataset.ID;
+    myLibrary.splice(bookToRemove, 1);
 
+    updateLibrary();
+};
+
+function addListeners () {
+    const removeButtons = Array.from(document.querySelectorAll('.remove'));
+    removeButtons.forEach(button => {
+        button.addEventListener('click', removeBook);
+    });
+};
 
 //temporary objects
 let book1 = new Book('book1', 'chamara', 100, true)
