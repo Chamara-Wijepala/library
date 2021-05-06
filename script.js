@@ -7,7 +7,7 @@ function Book(title, author, pages, read) {
     this.pages = pages,
     this.read = read
 };
-
+//Remove this function later
 function addBookToLibrary(object) {
     myLibrary.push(object);
 };
@@ -42,6 +42,10 @@ function addBookProperties(book) {
     let readElement = book.appendChild(document.createElement('button'));
     readElement.className = 'read';
     readElement.innerText = read;
+    let removeElement = book.appendChild(document.createElement('button'));
+    removeElement.className = 'remove';
+    removeElement.innerText = 'Remove';
+    removeElement.dataset.ID = myLibrary.indexOf(myLibrary[i]);
 };
 
 function processForm() {
