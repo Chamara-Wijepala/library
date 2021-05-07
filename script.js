@@ -69,14 +69,21 @@ function processForm() {
     updateLibrary();
 };
 
-function removeBook(buttonId) {
-    myLibrary.splice(buttonId, 1);
+function toggleRead(buttonId) {
+    if (myLibrary[buttonId].read === 'Read') {
+        myLibrary[buttonId].read = 'Not Read';
+    }
+    else if (myLibrary[buttonId].read === 'Not Read') {
+        myLibrary[buttonId].read = 'Read';
+    };
 
     updateLibrary();
 };
 
-function addListener() {
-    library.addEventListener('click', libraryEventHandler);
+function removeBook(buttonId) {
+    myLibrary.splice(buttonId, 1);
+
+    updateLibrary();
 };
 
 function libraryEventHandler(e) {
@@ -84,11 +91,15 @@ function libraryEventHandler(e) {
     let buttonId = e.target.dataset.ID;
 
     if (buttonClass === 'read') {
-        //Run function which toggles innerText of .read buttons
+        toggleRead(buttonId);
     }
     else if (buttonClass === 'remove') {
-        removeBook(buttonId)
+        removeBook(buttonId);
     };
+};
+
+function addListener() {
+    library.addEventListener('click', libraryEventHandler);
 };
 
 //temporary objects
