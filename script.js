@@ -20,7 +20,7 @@ function displayLibrary() {
         addBookProperties(book);
     };
 
-    addListeners();
+    addListener();
 };
 
 function updateLibrary() {
@@ -44,6 +44,7 @@ function addBookProperties(book) {
     let readElement = book.appendChild(document.createElement('button'));
     readElement.className = 'read';
     readElement.innerText = read;
+    readElement.dataset.ID = myLibrary.indexOf(myLibrary[i]);
     let removeElement = book.appendChild(document.createElement('button'));
     removeElement.className = 'remove';
     removeElement.innerText = 'Remove';
@@ -68,24 +69,32 @@ function processForm() {
     updateLibrary();
 };
 
-function removeBook() {
-    let bookToRemove = this.dataset.ID;
-    myLibrary.splice(bookToRemove, 1);
+function removeBook(buttonId) {
+    myLibrary.splice(buttonId, 1);
 
     updateLibrary();
 };
 
-function addListeners () {
-    const removeButtons = Array.from(document.querySelectorAll('.remove'));
-    removeButtons.forEach(button => {
-        button.addEventListener('click', removeBook);
-    });
+function addListener() {
+    library.addEventListener('click', libraryEventHandler);
+};
+
+function libraryEventHandler(e) {
+    let buttonClass = e.target.className;
+    let buttonId = e.target.dataset.ID;
+
+    if (buttonClass === 'read') {
+        //Run function which toggles innerText of .read buttons
+    }
+    else if (buttonClass === 'remove') {
+        removeBook(buttonId)
+    };
 };
 
 //temporary objects
-let book1 = new Book('book1', 'chamara', 100, true)
-let book2 = new Book('book2', 'chamara', 150, true)
-let book3 = new Book('book3', 'chamara', 200, false)
+let book1 = new Book('book1', 'chamara', 100, 'Read')
+let book2 = new Book('book2', 'chamara', 150, 'Read')
+let book3 = new Book('book3', 'chamara', 200, 'Not Read')
 addBookToLibrary(book1)
 addBookToLibrary(book2)
 addBookToLibrary(book3)
