@@ -8,26 +8,26 @@
     </head>
     <body>
         <header>
-
+            <h1>Library</h1>
         </header>
         <main>
             <div id="library"></div>
         </main>
         <form action="javascript:processForm()" method="GET" id="form">
             <div>
-                <label for="title">Title</label>
+                <label for="title">Title</label><br>
                 <input type="text" name="title" id="title" required>
             </div>
             <div>
-                <label for="author">Author</label>
+                <label for="author">Author</label><br>
                 <input type="text" name="author" id="author" required>
             </div>
             <div>
-                <label for="pages">Pages</label>
+                <label for="pages">Pages</label><br>
                 <input type="number" name="pages" id="pages" required min="1">
             </div>
-            <div>
-                Have you read this book?
+            <div class="radio">
+                Have you read this book?<br>
                 <div>
                     <label for="yes">Yes</label>
                     <input type="radio" name="read" id="yes" value="Read" required>
@@ -37,8 +37,8 @@
                     <input type="radio" name="read" id="no" value="Not read" required>
                 </div>
             </div>
-            <button type="reset">Clear</button>
-            <button type="submit">Submit</button>
+            <button type="reset" id="clear">Clear</button>
+            <button type="submit" id="submit">Submit</button>
         </form>
     </body>
     <script src="script.js"></script>

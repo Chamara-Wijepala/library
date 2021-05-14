@@ -1,0 +1,73 @@
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    padding: 0%;
+    margin: 0%;
+    background-color: gainsboro;
+}
+
+header {
+    text-align: center;
+}
+
+#library {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    width: 100vw;
+}
+
+#form {
+    background-color: white;
+    border-radius: 8px;
+    text-align: center;
+    width: 400px;
+    padding: 20px;
+}
+
+#form div {
+    margin: 10px;
+}
+
+#form input {
+    width: 95%;
+    padding: 5px;
+}
+
+#form button {
+    width: 40%;
+    padding: 15px;
+    margin: 10px;
+    border: none;
+    color: white;
+}
+
+#form #clear {
+    background-color: red;
+}
+
+#form #submit {
+    background-color: #04AA6D;
+}
+
+#form .radio div, #form .radio div {
+    display: inline-block;
+}
+
+.bookCard {
+    width: 200px;
+    padding: 5px;
+    margin: 5px;
+    background-color: powderblue;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.read, .remove {
+    padding: 10px;
+    margin: 2px;
+}

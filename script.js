@@ -32,7 +32,7 @@ function updateLibrary() {
 function addBookProperties(book) {
     let {title, author, pages, read} = myLibrary[i];
 
-    let titleElement = book.appendChild(document.createElement('h3'));
+    let titleElement = book.appendChild(document.createElement('h1'));
     titleElement.className = 'title';
     titleElement.innerText = title;
     let authorElement = book.appendChild(document.createElement('h3'));
