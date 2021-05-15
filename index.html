@@ -9,11 +9,13 @@
     <body>
         <header>
             <h1>Library</h1>
+            <button class="new-book" onclick="openForm()"></button>
         </header>
         <main>
             <div id="library"></div>
         </main>
         <form action="javascript:processForm()" method="GET" id="form">
+            <button type="button" class="close-form" onclick="closeForm()"></button>
             <div>
                 <label for="title">Title</label><br>
                 <input type="text" name="title" id="title" required>

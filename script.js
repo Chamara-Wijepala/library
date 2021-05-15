@@ -102,6 +102,14 @@ function addListener() {
     library.addEventListener('click', libraryEventHandler);
 };
 
+function openForm() {
+    document.getElementById('form').style.display = 'block';
+};
+
+function closeForm() {
+    document.getElementById('form').style.display = 'none';
+};
+
 //temporary objects
 let book1 = new Book('book1', 'chamara', 100, 'Read')
 let book2 = new Book('book2', 'chamara', 150, 'Read')
