@@ -53,9 +53,9 @@ function addBookProperties(book) {
 
 function processForm() {
     const formData = document.getElementById('form');
-    let title = formData[0].value;
-    let author = formData[1].value;
-    let pages = formData[2].value;
+    let title = formData[1].value;
+    let author = formData[2].value;
+    let pages = formData[3].value;
     let read;
 
     if (document.getElementById('yes').checked) {

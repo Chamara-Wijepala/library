@@ -59,7 +59,8 @@ header {
 }
 
 .bookCard {
-    width: 200px;
+    min-width: 200px;
+    max-width: fit-content;
     padding: 5px;
     margin: 5px;
     background-color: powderblue;
