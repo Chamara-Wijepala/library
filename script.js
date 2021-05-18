@@ -7,10 +7,6 @@ function Book(title, author, pages, read) {
     this.pages = pages,
     this.read = read
 };
-//Remove this function later
-function addBookToLibrary(object) {
-    myLibrary.push(object);
-};
 
 function displayLibrary() {
     for (i = 0; i < myLibrary.length; i++) {
@@ -66,7 +62,9 @@ function processForm() {
     };
 
     myLibrary.push({title, author, pages, read});
+
     updateLibrary();
+    closeForm();
 };
 
 function toggleRead(buttonId) {
@@ -110,11 +108,4 @@ function closeForm() {
     document.getElementById('form').style.display = 'none';
 };
 
-//temporary objects
-let book1 = new Book('book1', 'chamara', 100, 'Read')
-let book2 = new Book('book2', 'chamara', 150, 'Read')
-let book3 = new Book('book3', 'chamara', 200, 'Not Read')
-addBookToLibrary(book1)
-addBookToLibrary(book2)
-addBookToLibrary(book3)
 displayLibrary()
